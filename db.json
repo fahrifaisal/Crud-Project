@@ -1,0 +1,31 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "data": [
+    {
+      "namaDepan": "ASDAD",
+      "namaBelakang": "DSAD",
+      "email": "ASDAD",
+      "tl": "2023-10-01T16:00:00.000Z",
+      "gender": "Laki-Laki",
+      "nim": "A123145",
+      "ipk": 4,
+      "id": 10
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+<div mat-dialog-title>
+    <h1>Form Data</h1>
+</div>
+<form [formGroup]="dataForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Nama Depan</mat-label>
+                <input matInput type="text" placeholder="Contoh: Fahri" formControlName="namaDepan">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Nama Belakang</mat-label>
+                <input matInput placeholder="Contoh: Faisal" formControlName="namaBelakang">
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" placeholder="Contoh: test@gmail.com" formControlName="email">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Tanggal Lahir</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="tl">
+                <mat-hint>HH/BB/TTTT</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-radio-group aria-label="Pilih opsi" formControlName="gender">
+                <mat-label><b>Jenis Kelamin</b></mat-label>
+                <mat-radio-button value="Laki-Laki">Laki-laki</mat-radio-button>
+                <mat-radio-button value="Perempuan">Perempuan</mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>NIM</mat-label>
+                <input matInput placeholder="Contoh: D123456XXX" formControlName="nim">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>IPK</mat-label>
+                <input matInput placeholder="Contoh: 5" type="number" formControlName="ipk">
+                <mat-hint>*Kumulatif</mat-hint>
+            </mat-form-field>
+        </div>
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Batal</button>
+        <button mat-raised-button color="primary" type="submit">{{data ? 'Perbarui': 'Simpan'}}</button>
+    </div>
+</form>
